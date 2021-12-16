@@ -6,14 +6,14 @@
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 14:10:38 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/09 14:43:20 by mamaurai         ###   ########.fr       */
+/*   Updated: 2021/12/16 09:40:00 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# define _UINT_SIZEMAX_ 11
+# define _UINT_SIZEMAX_ 12
 
 # include "libft.h"
 

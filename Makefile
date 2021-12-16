@@ -52,8 +52,8 @@ _WHITE=$'\x1b[37m
 all:		${PUSH_SWAP} ${CHECKER}
 
 .c.o:
-			@echo "Compiling ${_YELLOW}${_BOLD}$<${_END}..."
-			@${CC} ${CFLAGS} ${INCS} -c $< -o $@ ${INCS}
+				@echo "Compiling ${_YELLOW}${_BOLD}$<${_END}..."
+				@${CC} ${CFLAGS} ${INCS} -c $< -o $@ ${INCS}
 
 ${PUSH_SWAP}:	${OBJS_SWAP} ${OBJS_OPE}
 				@echo "Compiling ${_GREEN}${_BOLD}libft${_END}..."
@@ -61,23 +61,23 @@ ${PUSH_SWAP}:	${OBJS_SWAP} ${OBJS_OPE}
 				@echo "Compiling ${_CYAN}${_BOLD}push_swap${_END}..."
 				@${CC} ${CFLAGS} ${INCS} ${OBJS_SWAP} ${OBJS_OPE} -o ${PUSH_SWAP} libft/libft.a
 
-${CHECKER}:	${OBJS_CHECK} ${OBJS_OPE}
-			@echo "Compiling ${_GREEN}${_BOLD}libft${_END}..."
-			@echo "Compiling ${_CYAN}${_BOLD}checker${_END}..."
-			@${CC} ${CFLAGS} ${INCS} ${OBJS_CHECK} ${OBJS_OPE} -o ${CHECKER} libft/libft.a
+${CHECKER}:		${OBJS_CHECK} ${OBJS_OPE}
+				@echo "Compiling ${_GREEN}${_BOLD}libft${_END}..."
+				@echo "Compiling ${_CYAN}${_BOLD}checker${_END}..."
+				@${CC} ${CFLAGS} ${INCS} ${OBJS_CHECK} ${OBJS_OPE} -o ${CHECKER} libft/libft.a
 
 clean:
-			@echo "Deleting ${_RED}${_BOLD}binary files${_END}..."
-			@${RM} ${OBJS_SWAP} ${OBJS_CHECK} ${OBJS_OPE}
-			@echo "Deleting ${_RED}${_BOLD}libft binary files${_END}..."
-			@${MAKE} -C libft clean >/dev/null
+				@echo "Deleting ${_RED}${_BOLD}binary files${_END}..."
+				@${RM} ${OBJS_SWAP} ${OBJS_CHECK} ${OBJS_OPE}
+				@echo "Deleting ${_RED}${_BOLD}libft binary files${_END}..."
+				@${MAKE} -C libft clean >/dev/null
 
-fclean:		clean
-			@echo "Deleting ${_RED}${_BOLD}push_swap and checker${_END}..."
-			@${RM} ${OBJS_SWAP} ${OBJS_CHECK} ${OBJS_OPE} ${PUSH_SWAP} ${CHECKER}
-			@echo "Deleting ${_RED}${_BOLD}libft librairy${_END}..."
-			@${MAKE} -C libft fclean >/dev/null
+fclean:			clean
+				@echo "Deleting ${_RED}${_BOLD}push_swap and checker${_END}..."
+				@${RM} ${OBJS_SWAP} ${OBJS_CHECK} ${OBJS_OPE} ${PUSH_SWAP} ${CHECKER}
+				@echo "Deleting ${_RED}${_BOLD}libft librairy${_END}..."
+				@${MAKE} -C libft fclean >/dev/null
 
-re:			fclean all
+re:				fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:			all clean fclean re

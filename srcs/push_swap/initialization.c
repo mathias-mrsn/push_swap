@@ -6,18 +6,19 @@
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 14:09:39 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/09 14:17:35 by mamaurai         ###   ########.fr       */
+/*   Updated: 2021/12/16 10:05:53 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 static int	__is_too_long__(char *str, int j)
 {
 	long	nbr;
 
 	nbr = __atol(str);
-	if (j > _UINT_SIZEMAX_ || (nbr >= INT_MAX || nbr <= INT_MIN))
+	if (j > _UINT_SIZEMAX_ || nbr > INT_MAX || nbr < INT_MIN)
 		return (__FAILURE);
 	return (__SUCCESS);
 }
@@ -25,7 +26,9 @@ static int	__is_too_long__(char *str, int j)
 static int	__string_check__(char *str)
 {
 	int	index;
+	int	save;
 
+	save = 0;
 	index = 0;
 	if (!str)
 		return (__FAILURE);
@@ -33,19 +36,14 @@ static int	__string_check__(char *str)
 	{
 		while (str[index] == ' ')
 			index++;
+		save = index;
 		if (str[index] == '-')
 			index++;
 		while (str[index] && __isdigit(str[index]))
 			index++;
 		if (str[index] != ' ' && str[index] != '\0')
 			return (__FAILURE);
-	}
-	index = -1;
-	while (str[++index])
-	{
-		while (str[index] == ' ')
-			index++;
-		if (__is_too_long__(&str[index], 0))
+		if (__is_too_long__(str + save, index - save))
 			return (__FAILURE);
 	}
 	return (__SUCCESS);
