@@ -1,8 +1,7 @@
-﻿# push_swap
-
-## Warning 
+﻿## Warning 
 
 The sharing of this project on my GitHub aims to help peoples to open their minds to new logics or help peoples in case of difficulty. In no way, that aims to copy and paste this work on your own repository.
+# push_swap
 
 **push_swap** is a project from the **42** Common Core, The project aims to create your first sort algorithm using a limited number of operation. The goal of this project isn't to creat the fastest algorithm but to creat a algorithm using less operations as possible 
 
